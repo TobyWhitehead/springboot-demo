@@ -15,8 +15,10 @@ public class DemoApplication {
 	}
 
 	@GetMapping("/customRoute")
-	public String myResponse(@RequestParam(value = "mySwear", defaultValue = "Twit")String swear){
-		return "you are a "+swear;
+	public int myResponse(){
+		Tile[][] grid = new Tile[10][10];
+		int numberMines = Minesweeper.generateGrid(grid);
+		return numberMines;
 	}
 
 }
